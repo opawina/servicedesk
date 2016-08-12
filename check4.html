@@ -6,21 +6,24 @@
 </head>
 <body>
 	<script type="text/javascript">
-	// объявляю класс users	
-		var uusers = {
-			name_user: 'Иван',
-			password_user: '1234',
-			email_user: 'ivan@list.ru',
-			role_user: 'any'
-		}
-		uusers.email_user = 'wim@win';
-		console.log(uusers.email_user);
-		console.log(uusers);
-	// ф заносит данные из полей регистрации в хранилище	
-		function regstr() {
-			localStorage.setItem('user', (name_user.value));
+		function register_button() { // заносит данные из полей регистрации в хранилище	
+			var usr = {
+				name_usr: 'Иван',
+				password_usr: '1234',
+				email_usr: 'ivan@list.ru',
+				role_usr: 'any'
+			}	
+
+			usr.name_usr = (name_user.value);
+			usr.password_usr = (password_user.value);
+			usr.email_usr = (email_user.value);
+			usr.role_usr = (role_user.value);
+			console.log(usr);
+			
+			localStorage.setItem('user2', (JSON.stringify(usr)));
 		}
 	</script>
+
 	<p>Enter your name
 		<input type="text" name="" id="name_user">
 	</p>
@@ -31,10 +34,13 @@
 		<input type="text" name="" id="email_user">
 	</p>
 	<p>Choose your role
-		<input type="text" name="" id="role_user">
+		<select name="" id="role_user">
+							<option value="customer">Покупатель</option>
+							<option value="contractor">Поставшик</option>
+		</select>
 	</p>
 	<p>
-		<input type="button" name="" value="Registration" onclick="regstr();">
+		<input type="button" name="" value="Registration" onclick="register_button();">
 	</p>
 </body>
 </html>
