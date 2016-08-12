@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CHECK</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// объявляю класс users	
+		var uusers = {
+			name_user: 'Иван',
+			password_user: '1234',
+			email_user: 'ivan@list.ru',
+			role_user: 'any'
+		}
+		uusers.email_user = 'wim@win';
+		console.log(uusers.email_user);
+		console.log(uusers);
+	// ф заносит данные из полей регистрации в хранилище	
+		function regstr() {
+			localStorage.setItem('user', (name_user.value));
+		}
+	</script>
+	<p>Enter your name
+		<input type="text" name="" id="name_user">
+	</p>
+	<p>Enter your password
+		<input type="text" name="" id="password_user">
+	</p>
+	<p>Enter your email
+		<input type="text" name="" id="email_user">
+	</p>
+	<p>Choose your role
+		<input type="text" name="" id="role_user">
+	</p>
+	<p>
+		<input type="button" name="" value="Registration" onclick="regstr();">
+	</p>
+</body>
+</html>
+
